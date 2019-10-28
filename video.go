@@ -26,12 +26,13 @@ type Video struct {
 	VideoAperture     float64
 	VideoExposure     string
 	VideoViews        uint
-	Camera            Camera
+	VideoAspectRatio  float64
+	Camera            *Camera
 	CameraID          uint
-	Country           Country
 	CountryID         string
 	CountryChanged    bool
-	Location          Location
+	Location          *Location
+	Country           *Country
 	LocationID        uint
 	LocationChanged   bool
 	LocationEstimated bool
@@ -39,6 +40,7 @@ type Video struct {
 	TakenAtLocal      time.Time
 	TakenAtChanged    bool
 	TimeZone          string
-	Labels            []VideoLabel
-	Files             []File
+	Labels            []*VideoLabel
+	Files             []*File
+	Albums            []*Album
 }

@@ -1,5 +1,11 @@
 package videosidecar
 
+import (
+	"strings"
+
+	"github.com/gosimple/slug"
+)
+
 // Filmed location
 type Location struct {
 	LocDisplayName string
@@ -20,4 +26,21 @@ type Location struct {
 	LocDescription string
 	LocNotes       string
 	LocFavorite    bool
+}
+
+func NewLocation(locationName string) *Location {
+	locationName = strings.TrimSpace(locationName)
+
+	if locationName == "" {
+		locationName = "Unknown"
+	}
+
+	locSlug := slug.Make(locationName)
+
+	result := &Location{
+		LocName:        locationName,
+		LocDisplayName: locSlug,
+	}
+
+	return result
 }

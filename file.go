@@ -14,6 +14,5 @@ type File struct {
 	FileMissing      bool
 	FileDuplicate    bool
 	FileOrientation  int
-	FileAspectRatio  float64
 	FileNotes        string
 }

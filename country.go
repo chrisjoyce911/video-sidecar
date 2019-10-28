@@ -5,12 +5,12 @@ import (
 )
 
 type Country struct {
-	ID                 string `gorm:"primary_key"`
+	ID                 string
 	CountrySlug        string
 	CountryName        string
-	CountryDescription string `gorm:"type:text;"`
-	CountryNotes       string `gorm:"type:text;"`
-	CountryVideo       Video
+	CountryDescription string
+	CountryNotes       string
+	CountryVideo       *Video
 	CountryVideoID     uint
 }
 
